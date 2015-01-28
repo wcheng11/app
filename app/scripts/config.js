@@ -13,5 +13,4 @@ angular.module('myApp')
     .constant("verifyCodeUrl","/v1/msg/verifycode" )
     .constant("loginUrl","/v1/customer/login" )
     .constant("getUserUrl","/v1/customer" )
-    .constant("modifyPwdUrl","/v1/password" )
-    .constant("profileUrl", "/v1/customer/");
+    .constant("modifyPwdUrl","/v1/password" );

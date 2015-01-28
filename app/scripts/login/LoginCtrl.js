@@ -1,6 +1,6 @@
 angular.module('myApp.controllers')
 
-    .controller('LoginCtrl',['$scope', '$location', 'LoginService', function ($scope, $location, LoginService) {
+    .controller('LoginCtrl',['$scope', '$location','$ionicPopup', 'LoginService', function ($scope, $location,$ionicPopup, LoginService) {
         $scope.loginData = {};
 
         $scope.doLogin = function () {
@@ -9,14 +9,17 @@ angular.module('myApp.controllers')
             return LoginService.login(jsonStr).then((function (data) {
                 console.debug("doLogin  service   ");
                 if(data.data.message.code === "0000") {
-                    var loginInfo = {
-                        mobile: $scope.loginData.userMobile,
-                        customerToken: data.data.value.customerToken
-                    };
-
-                    localStorage.setItem("loginInfo", JSON.stringify(loginInfo));
+                    saveCustomerToken($scope.loginData.userMobile,data.data.value.customerToken);
                     $location.path("/personalCenter");
 
+                }else if(data.data.message.code === "2101"){
+                    //用户账户不存在
+                    showAlert($ionicPopup,"登录","用户账户不存在！");
+                    localStorage.removeItem("loginInfo");
+                }else if(data.data.message.code === "2102"){
+                    //用户密码错
+                    showAlert($ionicPopup,"登录","密码错误！");
+                    localStorage.removeItem("loginInfo");
                 }else if(data.data.message.code === "3001"){
                     //todo
                     alert(data.data.message.summary);
