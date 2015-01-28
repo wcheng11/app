@@ -3,13 +3,13 @@
  *方法：（获取验证码、忘记密码）
  */
 angular.module('myApp.controllers')
-    .controller('ForgetPwdCtrl', ['$scope', '$location', 'ForgetPwdService',
+    .controller('ForgetPwdCtrl',
         function ($scope, $location, ForgetPwdService) {
-
+        $scope.data = {};
         $scope.forgetPwd = function () {
             console.debug("forgetPwd()");
-            var jsonStr = "?verifyCode=" + $scope.verifyCode;
-            return ForgetPwdService.ForgetPwd(jsonStr, $scope.mobileId).then((function (data) {
+            var jsonStr = "?verifyCode=" + $scope.data.verifyCode;
+            return ForgetPwdService.ForgetPwd(jsonStr, $scope.data.mobileId).then((function (data) {
                 console.info("success to execute ForgetPwdCtrl.forgetPwd  - status: " + data.status);
                 $location.path("/setPwd");
             }), function (error) {
@@ -20,7 +20,7 @@ angular.module('myApp.controllers')
         $scope.getVerifyCode = function () {
             console.debug("forgetPwd()");
             var jsonStr = {
-                mobile: $scope.mobileId,
+                mobile: $scope.data.mobileId,
                 verifyType: '1'
             };
             return ForgetPwdService.getVerifyCode(jsonStr).then((function (data) {
@@ -31,4 +31,4 @@ angular.module('myApp.controllers')
                 $scope.error = error.data;
             });
         };
-    }]);
+    });

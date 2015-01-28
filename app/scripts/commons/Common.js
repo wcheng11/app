@@ -1,22 +1,20 @@
-function verifyCustomerToken($location){
+function verifyCustomerToken($state){
     var loginInfo = localStorage.getItem("loginInfo");
     if (!loginInfo) {
-        $location.path("/login");
+        $state.go('login');
+        return;
     }
-
     var user = JSON.parse(loginInfo);
-
     var header = {
         customerToken: user.customerToken
     };
-
     return header
 }
 
-function getMobileOfLocal($location){
+function getMobileOfLocal($state){
     var loginInfo = localStorage.getItem("loginInfo");
     if (!loginInfo) {
-        $location.path("/login");
+        $state.go('login');
     }
     var user = JSON.parse(loginInfo);
     return user.mobile;
