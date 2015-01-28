@@ -3,13 +3,15 @@
  *方法：（获取用户信息）
  */
 angular.module('myApp.controllers')
-    .controller('PersonalCenterCtrl', ['$scope', '$location', 'PersonalCenterService',
-        function ($scope, $location, PersonalCenterService) {
+    .controller('PersonalCenterCtrl',
+        function ($scope,$state, PersonalCenterService) {
             $scope.loginFlg = false;
             $scope.imgStyle = "img-last-child-logout";
-
             $scope.getUserInfo = function () {
-                var header =  verifyCustomerToken($location);
+                var header =  verifyCustomerToken($state);
+                if(!header){
+                    return;
+                }
                 console.debug("getUserInfo()");
                 return PersonalCenterService.getUserInfo(header).then((function (data) {
                     console.info("success to execute PersonalCenterCtrl.getUserInfo  - status: " + data.status);
@@ -24,7 +26,7 @@ angular.module('myApp.controllers')
                     }else if(data.data.message.code === "2000"){
                         //token失效
                         localStorage.removeItem("loginInfo");
-                        $location.path("/login");
+                        $state.go("login");
                     }else if(data.data.message.code === "3001"){
                         // 后端服务错误
                         //todo
@@ -37,7 +39,7 @@ angular.module('myApp.controllers')
             };
             $scope.logout = function (){
                 localStorage.removeItem("loginInfo");
-                $location.path("/login");
+                $state.go("login");
             }
 
-        }]);
+        });

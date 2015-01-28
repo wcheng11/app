@@ -3,12 +3,13 @@
  *方法：（修改密码）
  */
 angular.module('myApp.controllers')
-    .controller('ModifyPwdCtrl', ['$scope', '$location', '$ionicPopup', 'ModifyPwdService',
+    .controller('ModifyPwdCtrl',
         function ($scope, $location, $ionicPopup, ModifyPwdService) {
+            $scope.pwd = {};
             $scope.modifyPwd = function () {
                 var header = verifyCustomerToken($location);
                 console.debug("ModifyPwd()");
-                var jsonStr = "?oldPassword=" + $scope.oldPassword + "&newPassword=" + $scope.newPassword;
+                var jsonStr = "?oldPassword=" + $scope.pwd.oldPassword + "&newPassword=" + $scope.pwd.newPassword;
                 return ModifyPwdService.modifyPwd(jsonStr, header).then((function (data) {
                     console.info("success to execute ModifyPwdCtrl.ModifyPwd  - status: " + data.status);
                     if (data.data.message.code === "0000") {
@@ -27,13 +28,13 @@ angular.module('myApp.controllers')
                         cleanText();
                     };
                     function cleanText() {
-                        $scope.oldPassword = "";
-                        $scope.newPassword = "";
-                        $scope.newPasswordConfirm = "";
+                        $scope.pwd.oldPassword = "";
+                        $scope.pwd.newPassword = "";
+                        $scope.pwd.newPasswordConfirm = "";
                     };
                 }), function (error) {
                     console.error("fail to execute ModifyPwdCtrl.ModifyPwd  - status: " + error.status);
                     $scope.error = error.data;
                 });
             };
-        }]);
+        });

@@ -74,7 +74,8 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
             // setup an abstract state for the tabs directive
             .state('modifyPwd', {
                 url: "/modifyPwd",
-                templateUrl: 'templates/modifyPassword.html'
+                templateUrl: 'templates/modifyPassword.html',
+                controller: 'ModifyPwdCtrl'
             })
             .state('setPwd', {
                 url: "/setPwd",

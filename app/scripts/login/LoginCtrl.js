@@ -10,7 +10,7 @@ angular.module('myApp.controllers')
                 console.debug("doLogin  service   ");
                 if(data.data.message.code === "0000") {
                     saveCustomerToken($scope.loginData.userMobile,data.data.value.customerToken);
-                    $state.go("personalCenter");
+                    $state.go('personalCenter');
                 }else if(data.data.message.code === "2101"){
                     //用户账户不存在
                     showAlert($ionicPopup,"登录","用户账户不存在！");
