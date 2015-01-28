@@ -10,6 +10,7 @@ angular.module('myApp.controllers')
 
             return ProfileService.getProfile(header).then(function (data){
                 console.info("success to execute ProfileCtrl.getProfile  - status: " + data.status);
+                console.log(data);
             });
         };
     }
