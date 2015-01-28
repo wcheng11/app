@@ -21,10 +21,12 @@ angular.module('myApp.controllers')
                     showAlert($ionicPopup,"登录","密码错误！");
                     localStorage.removeItem("loginInfo");
                 }else if(data.data.message.code === "3001"){
-                    //todo
-                    alert(data.data.message.summary);
+                    //服务端错误
+                    showAlert($ionicPopup,"登录","服务异常！");
                     localStorage.removeItem("loginInfo");
                 }else{
+                    //服务端错误
+                    showAlert($ionicPopup,"登录","服务异常！");
                     localStorage.removeItem("loginInfo");
                 }
 
