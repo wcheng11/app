@@ -4,7 +4,7 @@ angular.module('myApp.controllers')
 
         $scope.getProfileInfo = function () {
             console.log("getProfileInfo");
-            var header = verifyLocalStorage($location);
+            var header = verifyCustomerToken($location);
 
             var jsonStr = "";
 
@@ -12,6 +12,11 @@ angular.module('myApp.controllers')
                 console.info("success to execute ProfileCtrl.getProfile  - status: " + data.status);
                 console.log(data);
             });
+        };
+
+        $scope.saveProfileInfo = function () {
+            console.log("saveProfileInfo");
+            var header = verifyCustomerToken($location);
         };
     }
 ]);

@@ -8,18 +8,37 @@ angular.module('myApp.services')
             console.debug("getProfile()");
             deferred = $q.defer();
             $http({
-              method: 'get',
+              method: 'GET',
               url: baseUrl + profileUrl,
               headers: header
             })
-              .then(function (data) {
-                console.info("Success to  execute function getProfile  - status: " + data.status);
-                return deferred.resolve(data);
+              .then(function (result) {
+                console.info("Success to  execute function getProfile  - status: " + result.status);
+                return deferred.resolve(result);
               }, function (error) {
                 console.error("fail to  execute function getProfile  - status: " + error.status);
                 return deferred.reject(error);
               });
             return deferred.promise;
+          },
+
+          saveProfile : function (param, header) {
+              var deferred;
+              console.debug("saveProfile()");
+              deferred = $q.defer();
+              $http({
+                method: 'PUT',
+                url: baseUrl + profileUrl,
+                headers: header
+              })
+                .then(function (result) {
+                    console.info("Success to  execute function getProfile  - status: " + result.status);
+                    return deferred.resolve(result);
+                }, function (error) {
+                    console.error("fail to  execute function getProfile  - status: " + error.status);
+                    return deferred.reject(error);
+                });
+              return deferred.promise;
           }
       };
       return ProfileService;
