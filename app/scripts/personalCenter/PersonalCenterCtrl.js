@@ -9,9 +9,7 @@ angular.module('myApp.controllers')
             $scope.imgStyle = "img-last-child-logout";
 
             $scope.getUserInfo = function () {
-
                 var header =  verifyCustomerToken($location);
-
                 console.debug("getUserInfo()");
                 return PersonalCenterService.getUserInfo(header).then((function (data) {
                     console.info("success to execute PersonalCenterCtrl.getUserInfo  - status: " + data.status);
@@ -21,7 +19,7 @@ angular.module('myApp.controllers')
                         $scope.user = data.data.value;
                         $scope.loginFlg = true;
                         $scope.imgStyle = "img-last-child-login";
-                        $scope.lengthStyle = "name-length"+ $scope.user.name.length;
+                        $scope.lengthStyle = "name-length-"+ $scope.user.name.length;
 
                     }else if(data.data.message.code === "2000"){
                         //token失效
@@ -37,4 +35,9 @@ angular.module('myApp.controllers')
                     $scope.error = error.data;
                 });
             };
+            $scope.logout = function (){
+                localStorage.removeItem("loginInfo");
+                $location.path("/login");
+            }
+
         }]);
