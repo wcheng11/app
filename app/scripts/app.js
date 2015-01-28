@@ -58,6 +58,11 @@ angular.module('myApp.filters', []);
         })
         .config(function ($stateProvider, $urlRouterProvider) {
             $stateProvider
+                .state('login', {
+                  url: "/login",
+                  templateUrl: 'templates/login.html',
+                  controller: 'LoginCtrl'
+                })
                 // setup an abstract state for the tabs directive
                 .state('home', {
                     url: "/home",
@@ -82,18 +87,15 @@ angular.module('myApp.filters', []);
                     templateUrl: 'templates/personalCenter.html',
                     controller: 'PersonalCenterCtrl'
                 })
-                .state('login', {
-                    url: "/login",
-                    templateUrl: 'templates/login.html',
-                    controller: 'LoginCtrl'
-                })
                 .state('profile', {
                     url: "/profile",
-                    templateUrl: 'templates/profile.html'
+                    templateUrl: 'templates/profile.html',
+                    controller: 'ProfileCtrl'
                 })
                 .state('register', {
                     url: "/register",
-                    templateUrl: 'templates/register.html'
+                    templateUrl: 'templates/register.html',
+                    controller: 'RegisterCtrl'
                 });
             // if none of the above states are matched, use this as the fallback
             $urlRouterProvider.otherwise('/login');

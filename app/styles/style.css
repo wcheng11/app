@@ -252,11 +252,13 @@ input:-ms-input-placeholder {
 .login-register-findpwd-common {
   font-size: 12px;
   color: #ff6600;float: left;
+  text-decoration: none;
 }
 
 .login-register {
   float: left;
   margin-left: 15%;
+  text-decoration: none;
 }
 
 .login-findpwd {
@@ -454,15 +456,16 @@ button.bottom-btn {
   float: left;
 }
 .float-middle {
-  margin-left: 50px;
-  margin-right: 0px;
+  margin-left: 48px;
+  margin-right: 90px;
   width: 100%;
 }
 .float-right {
-  float: right;
-  width: 160px;
+  position: absolute;
+  right:0px;
+  padding-top: 6px;
+  width: 90px;
   right: 0;
-  padding-right: 40px;
 }
 
 /*标签*/
@@ -483,16 +486,20 @@ span.register-item-label {
 /*输入框*/
 input.register-item-input {
   line-height: 18px;
-  font-size: 15px;
+  font-size: 11px;
   color: #101010;
+  /*color:red;*/
   display: block;
-  padding-right: 10px;
+  padding-right: 0px;
 }
 
 /*验证码*/
 span.verify-code {
-  font-size: 16px;
+  font-size: 15px;
   color: #008ffe;
+  border:none;
+  background-color: white;
+  padding-right:0px;
 }
 
 /*同意协议*/
@@ -534,3 +541,77 @@ span.verify-code {
 .checkbox-youthstu-style input:checked:before, .checkbox-youthstu-style input:checked + .checkbox-icon:before {
   background: #ff6600;
   border-color: #ff6600; }
+
+
+input.profile-item-input::-webkit-input-placeholder {
+  font-size: 15px;
+}
+
+input.profile-item-input::-moz-placeholder {
+  font-size: 15px;
+}
+
+input.profile-item-input:-ms-input-placeholder {
+  font-size: 15px;
+}
+
+input.register-item-input::-webkit-input-placeholder {
+  font-size: 11px;
+}
+
+input.register-item-input::-moz-placeholder {
+  font-size: 11px;
+}
+
+input.register-item-input:-ms-input-placeholder {
+  font-size: 11px;
+}
+
+/* Register.html 校验*/
+button.verify-code {
+  font-size: 15px;
+  color: #008ffe;
+  border: none;
+  background-color: white;
+  padding-right: 0px;
+}
+
+
+/*弹出框*/
+button.alert-btn{
+  background-color: #ff6600;
+  color: white;
+  opacity:0.8;
+}
+button.alert-btn.active, button.alert-btn.activated{
+  background-color: #ff6600;
+  color: white;
+  opacity:0.7;
+}
+
+/*底部提交按钮*/
+button.btn-enable{
+  background-color: #ff6600;
+  border: 1px solid #ff6600;
+}
+button.btn-disable{
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
+}
+button.btn-enable.active, button.btn-enable.activated{
+  opacity:0.8;
+}
+
+
+/*验证码*/
+button.verify-code-enable{
+
+}
+button.verify-code-disable{
+  color:#cccccc;
+}
+
+button.verify-code.active, button.verify-code.activated{
+  /*background-color: #cccccc;*/
+  opacity: 0.7;
+}

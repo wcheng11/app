@@ -3,13 +3,13 @@
 
   <ion-header-bar class="global">
     <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">关闭</button>
+      <button class="button button-clear">关闭</button>
     </div>
     <h1 class="title">登入</h1>
 
   </ion-header-bar>
 
-  <ion-content class="login-content">
+  <ion-content class="login-content" ng-controller="LoginCtrl">
     <form ng-submit="doLogin()">
       <div style="margin-top: 40px; ">
         <div class="loginItem login-area" style="">
@@ -29,8 +29,8 @@
 
       </div>
       <div class="login-div">
-        <label class="login-register-findpwd-common login-register"  ng-click="">新用户注册</label>
-        <label class="login-register-findpwd-common login-findpwd" ng-click="">忘记密码</label>
+        <a class="login-register-findpwd-common login-register" href="#/register">新用户注册</a>
+        <a class="login-register-findpwd-common login-findpwd" >忘记密码</a>
       </div>
       <div class="login-submitbtnDiv">
         <label>
