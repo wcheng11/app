@@ -1,6 +1,6 @@
 angular.module('myApp.controllers')
 
-    .controller('LoginCtrl',['$scope', '$location','$ionicPopup', 'LoginService', function ($scope, $location,$ionicPopup, LoginService) {
+    .controller('LoginCtrl', function ($scope, $state, $ionicPopup, LoginService) {
         $scope.loginData = {};
 
         $scope.doLogin = function () {
@@ -10,8 +10,7 @@ angular.module('myApp.controllers')
                 console.debug("doLogin  service   ");
                 if(data.data.message.code === "0000") {
                     saveCustomerToken($scope.loginData.userMobile,data.data.value.customerToken);
-                    $location.path("/personalCenter");
-
+                    $state.go("personalCenter");
                 }else if(data.data.message.code === "2101"){
                     //用户账户不存在
                     showAlert($ionicPopup,"登录","用户账户不存在！");
@@ -35,6 +34,6 @@ angular.module('myApp.controllers')
                 $scope.error = error.data;
             });
         };
-    }]
+    }
 )
 ;
