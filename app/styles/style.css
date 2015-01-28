@@ -1,0 +1,536 @@
+.button.button-myStyle {
+    border-color: #ff6600;
+    background-color: #ff6600;
+    color: #fff;
+    font-size: 20px;
+    font-family:STXihei;
+    height:50px;}
+.button.button-myStyle:hover {
+    color: #fff;
+    text-decoration: none; }
+.button.button-myStyle.active, .button.button-myStyle.activated {
+    border-color: #ff6600;
+    background-color: #ff6600;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); }
+.button.button-myStyle.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #ff6600; }
+.button.button-myStyle.button-icon {
+    border-color: transparent;
+    background: none; }
+.button.button-myStyle.button-outline {
+    border-color: #ff6600;
+    background: transparent;
+    color: #ff6600; }
+.button.button-myStyle.button-outline.active, .button.button-myStyle.button-outline.activated {
+    background-color: #ff6600;
+    box-shadow: none;
+    color: #fff; }
+
+
+.bar.bar-myStyle {
+    border-color: #ff6600;
+    background-color: #ff6600;
+    background-image: linear-gradient(0deg, #ff6600, #ff6600 50%, transparent 50%);
+    color: #fff;}
+.bar.bar-myStyle .title {
+    color: #fff;
+    font-size: 20px;
+    font-family:STXihei;}
+
+.input-label{
+    width: 90px;
+    padding-left: 10px;
+    font-family:STXihei;
+    font-weight:bold;
+}
+
+.button-padding{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.style-bgcolor-gray-light{
+    background-color: #EDEDED;
+    padding: 0px 0 18px 0px;
+}
+
+.input-verifycode{
+    flex: 1 0 150px;
+    padding-right: 0px;
+}
+
+.item-input input {
+    flex: 1 0 150px;
+}
+.a-blink{
+    text-decoration: blink;
+    color:#008ffe;
+    font-family:STXihei;
+}
+.item-avatar .item-title{
+    padding-left: 85px;
+}
+.item-avatar .item-content,.item-avatar{
+    padding-left: 60px;
+    min-height: 52px;
+}
+
+.item p{
+    font-size: 18px;
+}
+.text-mid{
+    text-align:center;
+}
+.item-avatar-left .item-content {
+    padding-left: 85px;
+}
+.item-avatar .item-content > img:first-child{
+    max-width: 30px;
+    max-height: 30px;
+    top: 12px;
+    left: 22px;
+}
+
+.item-avatar-left .item-content > img:first-child{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.img-last-child-logout{
+    position: absolute;
+    top: 16px;
+    left: 180px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.img-last-child-login{
+    position: absolute;
+    top: 16px;
+    left: 200px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    border-radius: 50%;
+}
+.name-length-2{
+    left: 125px;
+}
+.name-length-3{
+    left: 145px;
+}
+.name-length-4{
+    left: 165px;
+}
+.name-length-5{
+    left: 185px;
+}
+
+
+
+
+.p-padding{
+    padding-bottom: 10px;
+}
+
+
+
+.login-iphoneIcon-layout {
+  margin-top: -5px;
+  margin-left: -15px;
+  float: left;
+}
+
+.login-lockIcon-layout {
+  margin-top: -1px;
+  margin-left: -15px;
+  float: left;
+}
+
+.login-input-font {
+  font-size: 20px;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 16px;
+}
+
+input::-moz-placeholder {
+  font-size: 16px;
+}
+
+input:-ms-input-placeholder {
+  font-size: 16px;
+}
+
+.global {
+  background-color: #ff6600;
+}
+
+.loginItem {
+  height: 100%;
+  color: #444;
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: -1px;
+  padding: 16px;
+  font-size: 100%;
+}
+
+.login-area {
+  border: 1px solid;
+  width:80%;
+  margin:0 auto;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-color: #ff6600;
+  border-radius: 5px;
+}
+
+.login-item-input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 6px 0 5px 16px;
+}
+
+.login-ailpay-layout {
+  float: left;
+}
+
+.login-content{
+    padding-top: 40px;
+}
+
+.login-username-input {
+    float:left;
+    width:80%;
+    height: 100%;
+    margin-top: 0px;
+}
+
+.login-form-hr {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.login-pwd-input {
+    float:left;
+    width:80%;
+    height: 100%;
+    margin-top: 5px;
+}
+
+.login-div {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.login-submitbtnDiv {
+  width: 100%;
+  margin-top: 60px;
+}
+
+.login-register-findpwd-common {
+  font-size: 12px;
+  color: #ff6600;float: left;
+}
+
+.login-register {
+  float: left;
+  margin-left: 15%;
+}
+
+.login-findpwd {
+  float: right;
+  margin-right: 15%;
+}
+
+.button.login-submitbtn {
+  background-color: #ff6600;
+  color: #fff;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.login-footerDiv {
+  width: 80%;
+  margin-top : 20px;
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.login-footerH6 {
+  width: 100%;
+  border:0;
+  margin:0;
+  padding:0;
+  position:relative;
+  height:5px;
+  border-bottom:1px solid #f60;
+}
+
+.login-footerEm {
+  color: #ff6600;
+  display:inline-block;
+  position:relative;
+  left:30%;
+  top: -3px;
+  background:#fff;
+  padding-left:5%;
+  padding-right: 5%;
+}
+
+.login-footerIcon-layout{
+  float: left;
+  margin-left: 35%;
+  margin-right: 40%;
+}
+
+
+/*profile.html 专用*/
+label.profile-item-wrapper {
+  border-width: 0px;
+  padding-top: 4px;
+  padding-bottom: 3px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif, "华文细黑", "微软雅黑";
+}
+span.profile-item-label {
+  line-height: 18px;
+  font-size: 16px;
+  display: block;
+  width: 100px;
+  padding-left: 5px;
+  color: #101010;
+  float: left;
+}
+input.profile-item-input {
+  line-height: 18px;
+  font-size: 15px;
+  color: #101010;
+  display: flex;
+  padding-left: 8px;
+}
+
+/*学校选择*/
+.school-wrapper {
+  width: 100%;
+  border-bottom: 2px solid #e9e9e9;
+  height: auto;
+  background-color: white;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif, "华文细黑", "微软雅黑";
+}
+.school-label-wrapper {
+  float: left;
+  height: 100px;
+  line-height: 100px;
+  width: 70px;
+  padding-left: 20px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+.school-label {
+  height: 100%;
+  margin-top: 5px;
+  font-size: 16px;
+  border-right: 1px solid #ccc;
+}
+.school-select-wrapper {
+  height: 36px;
+  margin-left: 100px;
+  margin-right: 10px;
+  width: auto;
+  font-size: 16px;
+}
+.school-input-border {
+  border-bottom: 1px solid #e9e9e9;
+}
+
+/* 下拉菜单*/
+select.school-select {
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif, "华文细黑", "微软雅黑";
+  display: block;
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  font-size: 16px;
+  color: #bdbdbd;
+  overflow: hidden;
+  border-width: 0px;
+  text-indent: 40px;
+  background: url("../img/select.png") no-repeat right white;
+  -webkit-appearance: none;
+}
+
+
+/* Regiser.html Profile.html公用*/
+/* author: yanqi.zong*/
+
+
+/*回退按钮*/
+.back-img {
+  background-image: url("../img/back.png");
+  height: 30px;
+  width: 17px;
+  margin-top: 1px;
+  margin-left: 2px;
+  float: left;
+  background-repeat: no-repeat;
+}
+
+/*Header标题*/
+.my-header {
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif, "华文细黑", "微软雅黑";
+  background-color: #ff6600;
+  line-height: 33px;
+  border: none;
+}
+h1.my-h1 {
+  font-size: 20px;
+  color: white;
+}
+
+/*三种大小的分割条*/
+.label-divider {
+  /*用于分割label*/
+  background-color: #e9e9e9;
+  height: 3px;
+  width: 100%;
+}
+.section-divider {
+  /*用于分割两个区域*/
+  background-color: #e9e9e9;
+  height: 14px;
+  width: 100%;
+}
+.button-divider {
+  /*用于分割区域和Button*/
+  background-color: #e9e9e9;
+  height: 24px;
+  width: 100%;
+}
+
+/*底部按钮*/
+.btn-wrapper {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+button.bottom-btn {
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  display: block;
+  width: 100%;
+  color: white;
+  background-color: #ff6600;
+  border: 1px solid #ff6600;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif, "华文细黑", "微软雅黑";
+}
+
+/* 以上公用*/
+
+/* 以下 Register专用*/
+/*三列布局*/
+.float-left {
+  float: left;
+}
+.float-middle {
+  margin-left: 50px;
+  margin-right: 0px;
+  width: 100%;
+}
+.float-right {
+  float: right;
+  width: 160px;
+  right: 0;
+  padding-right: 40px;
+}
+
+/*标签*/
+label.item-wrapper {
+  border-width: 0px;
+}
+span.register-item-label {
+  line-height: 18px;
+  font-size: 16px;
+  display: block;
+  width: 80px;
+  padding-left: 10px;
+  color: #101010;
+  float: left;
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif, "华文细黑", "微软雅黑";
+}
+
+/*输入框*/
+input.register-item-input {
+  line-height: 18px;
+  font-size: 15px;
+  color: #101010;
+  display: block;
+  padding-right: 10px;
+}
+
+/*验证码*/
+span.verify-code {
+  font-size: 16px;
+  color: #008ffe;
+}
+
+/*同意协议*/
+.agreement-wrapper {
+  font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif, "华文细黑", "微软雅黑";
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  padding-left: 20px;
+}
+.agreement-left {
+  float: left;
+}
+.agreement-right {
+  margin-top: 16px;
+  float: left;
+}
+.checkbox-wrapper {
+  background-color: #e9e9e9;
+  border-width: 0px;
+  padding-right: 0px;
+}
+.agreement-a {
+  text-decoration: none;
+  color: #37a3f9;
+  font-size: 12px;
+}
+.agreement-span {
+  font-size: 16px;
+  position: relative;
+  left: -10px;
+  font-weight: bold;
+}
+
+.checkbox-youthstu-style input:before, .checkbox-youthstu-style .checkbox-icon:before {
+  border-color: #ff6600; }
+
+.checkbox-youthstu-style input:checked:before, .checkbox-youthstu-style input:checked + .checkbox-icon:before {
+  background: #ff6600;
+  border-color: #ff6600; }

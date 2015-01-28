@@ -1,0 +1,17 @@
+.iphone-icon{
+  content: url("../img/iphone_icon.jpg");
+  width: 30px;
+  height: 30px;
+}
+
+.lock-icon {
+  content: url("../img/lock_icon.jpg");
+  width: 30px;
+  height: 30px;
+}
+
+.alipay-icon {
+  content: url("../img/alipay_icon.jpg");
+  width: 100px;
+  height: 50px;
+}

@@ -1,0 +1,52 @@
+<ion-view>
+    <ion-content class="no-header style-bgcolor-gray-light" ng-controller="PersonalCenterCtrl" ng-init="getUserInfo()">
+        <div class="bar bar-header  bar-myStyle">
+            <a class="button icon-left ion-chevron-left button-clear button-light" backButton href=""></a>
+            <h1 class="title">个人中心</h1>
+        </div>
+        <div class="bar bar-subheader bar-tabs">
+        <ion-list>
+            <label class="item item-input style-bgcolor-gray-light">
+            </label>
+            <ion-item class=" item-avatar-left item-icon-right" type="item-text-wrap" href="#/profile">
+                <img ng-src="img/defaultavatar.jpg">
+                <p class="p-padding"><span ng-hide="loginFlg">你好，同学</span>{{user.name}}</p>
+                <p>账号：<span ng-hide="loginFlg">159****9007</span>{{user.mobile}}</p>
+                <img class="{{imgStyle}} {{lengthStyle}}"  ng-src="img/unauthenticated.jpg">
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <label class="item item-input style-bgcolor-gray-light">
+            </label>
+            <ion-item class="item-avatar item-icon-right" type="item-text-wrap" href="#/home">
+                <img ng-src="img/shoppingcart.jpg">
+                <p>我的订单</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" type="item-text-wrap" href="#/home">
+                <img ng-src="img/bill.jpg">
+                <p>我的账单</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <label class="item item-input style-bgcolor-gray-light">
+            </label>
+            <ion-item class="item-avatar item-icon-right" type="item-text-wrap" href="#/home">
+                <img ng-src="img/help.jpg">
+                <p>帮助</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <ion-item class="item-avatar item-icon-right" type="item-text-wrap" href="#/modifyPwd">
+                <img ng-src="img/settingup.jpg">
+                <p>密码修改</p>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </ion-item>
+            <label class="item item-input style-bgcolor-gray-light">
+            </label>
+            <ion-item class="tab-mid-height text-mid" type="item-text-wrap">
+                <p>退 出 登 录</p>
+            </ion-item>
+
+        </ion-list>
+            </div>
+
+    </ion-content>
+</ion-view>
