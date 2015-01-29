@@ -81,13 +81,18 @@ var Utils = (function() {
             });
         };
 
-        this.showAlert = function($ionicPopup,title,template) {
+        this.showAlert = function($ionicPopup,title,errorStr) {
             var alertPopup = $ionicPopup.alert({
-              title: title,
-              template: template
+                title: title, // String. The title of the popup.
+                cssClass: '', // String, The custom CSS class name
+                subTitle: '', // String (optional). The sub-title of the popup.
+                template: '<p style="text-align: center">' + errorStr + '</p>', // String (optional). The html template to place in the popup body.
+                templateUrl: '', // String (optional). The URL of an html template to place in the popup   body.
+                okText: '确定', // String (default: 'OK'). The text of the OK button.
+                okType: 'alert-btn'// String (default: 'button-positive'). The type of the OK button.
             });
             alertPopup.then(function(res) {
-              console.log('Thank you for not eating my delicious ice cream cone');
+                console.log("弹出框: " + errorStr);
             });
         };
     }

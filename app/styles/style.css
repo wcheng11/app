@@ -57,17 +57,20 @@
 }
 
 .input-verifycode{
+    -webkit-flex: 1 0 150px;
     flex: 1 0 150px;
     padding-right: 0px;
 }
 
 .item-input input {
+    -webkit-flex: 1 0 150px;
     flex: 1 0 150px;
 }
 .a-blink{
     text-decoration: blink;
     color:#008ffe;
     font-family:STXihei;
+    margin-left:-130px;
 }
 .item-avatar .item-title{
     padding-left: 85px;
