@@ -40,15 +40,15 @@ module.exports = function (grunt) {
       development: {
         constants: {
           ENV: {
-            name: 'development',
-            apiEndpoint: 'http://dev.yoursite.com:10000/'
+            name: 'dev',
+            apiEndpoint: 'http://192.168.0.97:9008'
           }
         }
       },
       production: {
         constants: {
           ENV: {
-            name: 'production',
+            name: 'prod',
             apiEndpoint: 'http://api.yoursite.com/'
           }
         }
