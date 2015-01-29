@@ -1,6 +1,6 @@
-angular.module('myApp.controllers', ['ionic'])
-    .controller('RegisterCtrl', ['$scope', '$location', '$interval', '$ionicPopup', 'RegisterService',
-        function($scope, $location, $interval, $ionicPopup, RegisterService) {
+angular.module('myApp.controllers')
+    .controller('RegisterCtrl',
+        function($scope, $state, $interval, $ionicPopup, RegisterService) {
 
             var resultStatus = {
                 success : "0000",
