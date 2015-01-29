@@ -4,7 +4,7 @@ angular.module('myApp.controllers')
 
         $scope.getProfileInfo = function () {
             console.log("getProfileInfo");
-            var header = verifyCustomerToken($location);
+            var header = Utils.verifyCustomerToken($location);
 
             var jsonStr = "";
 
@@ -16,7 +16,7 @@ angular.module('myApp.controllers')
 
         $scope.saveProfileInfo = function () {
             console.log("saveProfileInfo");
-            var header = verifyCustomerToken($location);
+            var header = Utils.verifyCustomerToken($location);
         };
     }
 ]);

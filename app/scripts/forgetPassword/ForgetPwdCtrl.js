@@ -11,7 +11,7 @@ angular.module('myApp.controllers')
             var jsonStr = "?verifyCode=" + $scope.data.verifyCode;
             return ForgetPwdService.forgetPwd(jsonStr, $scope.data.mobileId).then((function (data) {
                 console.info("success to execute ForgetPwdCtrl.forgetPwd  - status: " + data.status);
-                saveCustomerToken($scope.data.mobileId,data.data.value.customerToken)
+                Utils.saveCustomerToken($scope.data.mobileId,data.data.value.customerToken)
                 $state.go('setPwd');
             }), function (error) {
                 console.error("fail to execute ForgetPwdCtrl.forgetPwd  - status: " + error.status);

@@ -9,23 +9,23 @@ angular.module('myApp.controllers')
             return LoginService.login(jsonStr).then((function (data) {
                 console.debug("doLogin  service   ");
                 if(data.data.message.code === "0000") {
-                    saveCustomerToken($scope.loginData.userMobile,data.data.value.customerToken);
+                    Utils.saveCustomerToken($scope.loginData.userMobile,data.data.value.customerToken);
                     $state.go('personalCenter');
                 }else if(data.data.message.code === "2101"){
                     //用户账户不存在
-                    showAlert($ionicPopup,"登录","用户账户不存在！");
+                    Utils.showAlert($ionicPopup,"登录","用户账户不存在！");
                     localStorage.removeItem("loginInfo");
                 }else if(data.data.message.code === "2102"){
                     //用户密码错
-                    showAlert($ionicPopup,"登录","密码错误！");
+                    Utils.showAlert($ionicPopup,"登录","密码错误！");
                     localStorage.removeItem("loginInfo");
                 }else if(data.data.message.code === "3001"){
                     //服务端错误
-                    showAlert($ionicPopup,"登录","服务异常！");
+                    Utils.showAlert($ionicPopup,"登录","服务异常！");
                     localStorage.removeItem("loginInfo");
                 }else{
                     //服务端错误
-                    showAlert($ionicPopup,"登录","服务异常！");
+                    Utils.showAlert($ionicPopup,"登录","服务异常！");
                     localStorage.removeItem("loginInfo");
                 }
 

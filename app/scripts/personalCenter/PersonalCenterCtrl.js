@@ -8,7 +8,7 @@ angular.module('myApp.controllers')
             $scope.loginFlg = false;
             $scope.imgStyle = "img-last-child-logout";
             $scope.getUserInfo = function () {
-                var header =  verifyCustomerToken($state);
+                var header =  Utils.verifyCustomerToken($state);
                 if(!header){
                     return;
                 }
