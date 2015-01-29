@@ -469,7 +469,7 @@ button.bottom-btn {
 }
 
 /*标签*/
-label.item-wrapper {
+div.item-wrapper {
   border-width: 0px;
 }
 span.register-item-label {

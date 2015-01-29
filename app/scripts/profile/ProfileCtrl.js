@@ -1,5 +1,5 @@
-angular.module('myApp.controllers', ['ionic'])
-    .controller('ProfileCtrl', ['$scope', '$location', 'ProfileService', '$ionicPopup', function($scope, $location, ProfileService, $ionicPopup) {
+angular.module('myApp.controllers')
+    .controller('ProfileCtrl', function($scope, $location, ProfileService, $ionicPopup) {
         $scope.profileData = {};
 
         $scope.getProfileInfo = function() {
@@ -233,4 +233,4 @@ angular.module('myApp.controllers', ['ionic'])
 
 
 
-    }]);
+    });
