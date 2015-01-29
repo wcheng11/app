@@ -1,6 +1,6 @@
 angular.module('myApp.controllers')
-    .controller('RegisterCtrl', ['$scope', '$location', '$interval', '$ionicPopup', 'RegisterService',
-        function($scope, $location, $interval, $ionicPopup, RegisterService) {
+    .controller('RegisterCtrl',
+        function($scope, $state, $interval, $ionicPopup, RegisterService) {
 
             var resultStatus = {
                 success : "0000",
@@ -198,7 +198,7 @@ angular.module('myApp.controllers')
                             };
 
                             localStorage.setItem("loginInfo", JSON.stringify(loginInfo));
-                            $location.path("/personalCenter");
+                            $state.go("personalCenter");
                         }
                         // 2202 验证码错误
                         else if (code == resultStatus.verificationCodeError) {
@@ -238,6 +238,4 @@ angular.module('myApp.controllers')
                 });
             };
 
-        }
-
-    ]);
+        });
