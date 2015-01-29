@@ -3,6 +3,10 @@
 `npm install`
 `bower install`
 
+本地调试
+http://camnpr.com/archives/chrome-args-disable-web-security.html
+
+
 如果你使用intellijIDEA开发，直接打开 app 目录下的index.html
 
 ## Project Structure
