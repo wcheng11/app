@@ -4,14 +4,15 @@
  */
 angular.module('myApp.controllers')
     .controller('ForgetPwdCtrl',
-        function ($scope, $location, ForgetPwdService) {
+        function ($scope, $state, ForgetPwdService) {
         $scope.data = {};
         $scope.forgetPwd = function () {
             console.debug("forgetPwd()");
             var jsonStr = "?verifyCode=" + $scope.data.verifyCode;
-            return ForgetPwdService.ForgetPwd(jsonStr, $scope.data.mobileId).then((function (data) {
+            return ForgetPwdService.forgetPwd(jsonStr, $scope.data.mobileId).then((function (data) {
                 console.info("success to execute ForgetPwdCtrl.forgetPwd  - status: " + data.status);
-                $location.path("/setPwd");
+                saveCustomerToken($scope.data.mobileId,data.data.value.customerToken)
+                $state.go('setPwd');
             }), function (error) {
                 console.error("fail to execute ForgetPwdCtrl.forgetPwd  - status: " + error.status);
                 $scope.error = error.data;

@@ -21,7 +21,7 @@ angular.module('myApp.controllers', ['ionic'])
                 // 本地错误
                 mobile: '请输入11位中国大陆手机号',
                 verifyCode: '请输入4位验证码',
-                pwd: '密码请输入6-16位字符或数字',
+                dataInfo: '密码请输入6-16位字符或数字',
 
                 // 服务器端交互
                 serverError: '服务端错误,稍后再试',
@@ -167,7 +167,7 @@ angular.module('myApp.controllers', ['ionic'])
                 }
 
                 if (!$scope.pwdCorrect()) {
-                    $scope.showAlert($scope.errors['pwd']);
+                    $scope.showAlert($scope.errors['dataInfo']);
                     return;
                 }
                 // 服务器端注册用户

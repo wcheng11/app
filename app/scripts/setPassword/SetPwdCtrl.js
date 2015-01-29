@@ -3,15 +3,15 @@
  *方法：（修改密码）
  */
 angular.module('myApp.controllers')
-    .controller('ModifyPwdCtrl',
-        function ($scope, $state, $ionicPopup, ModifyPwdService) {
+    .controller('SetPwdCtrl',
+        function ($scope, $state, $ionicPopup, SetPwdService) {
             $scope.dataInfo = {};
-            $scope.modifyPwd = function () {
+            $scope.setPwd = function () {
                 var header = verifyCustomerToken($state);
-                console.debug("ModifyPwd()");
-                var jsonStr = "?oldPassword=" + $scope.dataInfo.oldPassword + "&newPassword=" + $scope.dataInfo.newPassword;
-                return ModifyPwdService.modifyPwd(jsonStr, header).then((function (data) {
-                    console.info("success to execute ModifyPwdCtrl.ModifyPwd  - status: " + data.status);
+                console.debug("setPwd()");
+                var jsonStr = "?mobile=" + $scope.dataInfo.password + "&password =" + $scope.dataInfo.password ;
+                return SetPwdService.setPwd(jsonStr, header).then((function (data) {
+                    console.info("success to execute SetPwdCtrl.setPwd  - status: " + data.status);
                     if (data.data.message.code === "0000") {
                         $state.go('personalCenter');
                     } else if (data.data.message.code === "2504") {
@@ -33,7 +33,7 @@ angular.module('myApp.controllers')
                         $scope.dataInfo.newPasswordConfirm = "";
                     };
                 }), function (error) {
-                    console.error("fail to execute ModifyPwdCtrl.ModifyPwd  - status: " + error.status);
+                    console.error("fail to execute SetPwdCtrl.setPwd  - status: " + error.status);
                     $scope.error = error.data;
                 });
             };

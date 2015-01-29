@@ -13,6 +13,7 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
     .constant("loginUrl", "/v1/customer/login")
     .constant("getUserUrl", "/v1/customer")
     .constant("modifyPwdUrl", "/v1/password")
+    .constant("setPwdUrl", "/v1/password")
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -79,7 +80,9 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
             })
             .state('setPwd', {
                 url: "/setPwd",
-                templateUrl: 'templates/setPassword.html'
+                templateUrl: 'templates/setPassword.html',
+                controller: 'SetPwdCtrl'
+
             })
             .state('forgetPwd', {
                 url: "/forgetPwd",

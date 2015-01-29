@@ -9,7 +9,7 @@ angular.module('myApp.services')
 
             var ForgetPwdService = {
 
-                ForgetPwd: function (jsonStr, mobileId) {
+                forgetPwd: function (jsonStr, mobileId) {
                     var deferred;
                     console.debug("ForgetPwdService()");
                     deferred = $q.defer();
