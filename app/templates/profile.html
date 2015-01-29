@@ -13,32 +13,32 @@
         <form name="profileForm" novalidate>
             <div class="section-divider"></div>
 
-            <label class="item item-input profile-item-wrapper">
+            <div class="item item-input profile-item-wrapper">
                 <span class="profile-item-label">姓名</span>
                 <input name="userName" ng-model="user.name" class="profile-item-input" type="text" placeholder="请填写您的真实姓名">
-            </label>
+            </div>
 
             <div class="label-divider"></div>
 
-            <label class="item item-input profile-item-wrapper">
+            <div class="item item-input profile-item-wrapper">
                 <span class="profile-item-label">身份证号</span>
                 <input name="userIdCard" ng-model="user.idCard" class="profile-item-input" type="text" placeholder="请输入15或18位身份证号">
-            </label>
+            </div>
 
             <div class="label-divider"></div>
 
-            <label class="item item-input profile-item-wrapper">
+            <div class="item item-input profile-item-wrapper">
                 <span class="profile-item-label">邮箱</span>
                 <input name="userEmail" ng-model="user.email" class="profile-item-input" type="text" placeholder="请输入您常用的邮箱">
-            </label>
+            </div>
 
 
             <div class="label-divider"></div>
 
-            <label class="item item-input profile-item-wrapper">
+            <div class="item item-input profile-item-wrapper">
                 <span class="profile-item-label">支付宝账户</span>
                 <input name="userAccount" ng-model="user.account" class="profile-item-input" type="text" placeholder="请输入您的支付宝账号">
-            </label>
+            </div>
 
 
             <div class="section-divider"></div>
@@ -49,9 +49,9 @@
                 </div>
 
                 <div class="school-select-wrapper school-input-border">
-                    <select class="school-select">
-                        <option value="">--请选择省--</option>
-                        <option value="">--请选择省--</option>
+                    <select class="school-select" ng-model="user.schoolProvince">
+                        <option value="1">--请选择省--</option>
+                        <option value="2">--请选择省--</option>
                     </select>
                 </div>
 
@@ -68,10 +68,10 @@
                 </div>
             </div>
 
-            <label class="item item-input profile-item-wrapper">
+            <div class="item item-input profile-item-wrapper">
                 <span class="profile-item-label">宿舍</span>
                 <input name="userApartment" ng-model="user.apartment" class="profile-item-input" type="text" placeholder="请填写详细宿舍地址">
-            </label>
+            </div>
 
 
             <div class="button-divider"></div>

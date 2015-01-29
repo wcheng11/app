@@ -23,18 +23,20 @@
             </div>
             <div class="label-divider"></div>
 
-            <span class="item item-input item-wrapper">
-                <div class="float-left"><span class="register-item-label">验证码</span>
-            </div>
+            <div class="item item-input item-wrapper">
+                <div class="float-left">
+                    <span class="register-item-label">验证码</span>
+                </div>
 
-            <div class="float-middle">
-                <input name="verifyCode" ng-model="newUser.userVerifyCode" class="register-item-input form-control" type="text" placeholder="请输入验证码" required>
-            </div>
 
-            <div class="float-right">
-                <button class="verify-code" ng-disabled="!verifyCodeEnable()" ng-class="verifyCodeEnable()? 'verify-code-enable':'verify-code-disable'" ng-click="getVerifyCode()">{{verifyCode.message}}</button>
+                <div class="float-middle">
+                    <input name="verifyCode" ng-model="newUser.userVerifyCode" class="register-item-input form-control" type="text" placeholder="请输入验证码" required>
+                </div>
+
+                <div class="float-right">
+                    <button class="verify-code" ng-disabled="!verifyCodeEnable()" ng-class="verifyCodeEnable()? 'verify-code-enable':'verify-code-disable'" ng-click="getVerifyCode()">{{verifyCode.message}}</button>
+                </div>
             </div>
-            </span>
 
 
 
@@ -59,21 +61,21 @@
             </div>
 
 
-            <div class="section-divider"></div>
+            <div class="section-divider "></div>
 
-            <div class="agreement-wrapper">
-                <div class="agreement-left">
-                    <li class="item item-checkbox checkbox-wrapper checkbox-youthstu-style">
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model="newUser.userAgreed" class="checkbox-item">
+            <div class="agreement-wrapper ">
+                <div class="agreement-left ">
+                    <li class="item item-checkbox checkbox-wrapper checkbox-youthstu-style ">
+                        <label class="checkbox ">
+                            <input type="checkbox " ng-model="newUser.userAgreed " class="checkbox-item ">
                         </label>
-                        <span class="agreement-span">同意</span>
+                        <span class="agreement-span ">同意</span>
                     </li>
                 </div>
-                <div class="agreement-right">
-                    <a href="" class="agreement-a">《用户使用协议》</a>
+                <div class="agreement-right ">
+                    <a href=" " class="agreement-a ">《用户使用协议》</a>
                     <br>
-                    <a href="" class="agreement-a">《使用条款和隐私政策协议》</a>
+                    <a href=" " class="agreement-a ">《使用条款和隐私政策协议》</a>
                 </div>
             </div>
         </form>

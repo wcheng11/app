@@ -52,18 +52,7 @@ angular.module('myApp.controllers', ['ionic'])
             apartment: ''
         };
 
-        // 是否可以点击注册按钮
-        $scope.registerBtnEnable = function() {
 
-            var enable = $scope.user.name &&
-                $scope.user.idCard &&
-                $scope.user.email &&
-                $scope.user.account &&
-                $scope.user.apartment;
-
-            return enable;
-
-        };
 
         // 校验名字
         $scope.nameCorrect = function() {
@@ -73,11 +62,13 @@ angular.module('myApp.controllers', ['ionic'])
             for (var i = 0; i < $scope.user.name.length; i++) {
                 var charTemp = $scope.user.name[i];
                 var code = charTemp.charCodeAt(0);
-                var single = $scope.isSingleChar(code);
-                if (single) {
+                var singleChar = $scope.isSingleChar(code);
+                var chineseChar = $scope.isChineseChar(code);
+                if (!(singleChar || chineseChar)) {
+                    return false;
+                } else if (singleChar) {
                     charLength += 1;
-                } else {
-                    // 目前不知道汉字的charCode起始值 所以字符外 都认为是汉字, 长度都认为是二
+                } else if (chineseChar) {
                     charLength += 2;
                 }
             }
@@ -86,6 +77,7 @@ angular.module('myApp.controllers', ['ionic'])
             return (charLength >= minLength && charLength <= maxLength); // 字符范围
         };
 
+        // 判断是否是有效字符: 点 空格 大小写字母
         $scope.isSingleChar = function(charTemp) {
             var result = false;
             result = result || (charTemp === 183) // ·
@@ -94,6 +86,14 @@ angular.module('myApp.controllers', ['ionic'])
                 || (charTemp >= 65 && charTemp <= 90) // 大写字母
                 || (charTemp >= 97 && charTemp <= 122); // 小写字母
             return result;
+        };
+
+        // 判断是否是汉字
+        $scope.isChineseChar = function(charTemp) {
+            // 检查该字符的unicode是否在汉字集中
+            var hzStart = 19968;
+            var hzEnd = 40869;
+            return (charTemp >= hzStart && charTemp <= hzEnd);
         };
 
 
@@ -119,6 +119,7 @@ angular.module('myApp.controllers', ['ionic'])
             return true;
         };
 
+        // 判断是数字
         $scope.isNumber = function(numTemp) {
             return numTemp >= '0' && numTemp <= '9';
         };
@@ -141,35 +142,61 @@ angular.module('myApp.controllers', ['ionic'])
             return true;
         };
 
-
+        // 支付宝账号是否正确
         $scope.accountCorrect = function() {
             // 是否是手机
             var mobileReg = /^\d{11}$/;
             var mobileCorrect = mobileReg.test($scope.user.account);
-            
+
             var result = mobileCorrect || $scope.emailCorrect($scope.user.account);
-           
+
             return result;
         };
 
+        // 学生宿舍是否正确
         $scope.apartmentCorrect = function() {
             var length = $scope.user.apartment.length;
-            var result  = length >= 5 && length <= 30;
+            var result = length >= 5 && length <= 30;
             return result;
 
 
         };
-
+        // 错误类型
         $scope.errors = {
 
             name: '姓名错误,请重新输入',
             idCard: '身份证号错误,请重新输入',
             email: '邮箱错误,请重新输入',
             account: '支付宝账号错误,请重新输入',
+            school: '请选择学校',
             apartment: '宿舍错误,请重新输入',
             nameIdCardDontMatch: '个人信息认证失败,请确认信息是否真实一致'
 
         };
+
+        // 校验学校 
+        $scope.schoolCorrect = function() {
+            // console.log("province "+$scope.user.schoolProvince);
+            // console.log("city "+$scope.user.schoolCity);
+            // console.log("school: "+$scope.user.school);
+            // TODO
+
+        };
+
+        // 是否可以点击注册按钮
+        $scope.registerBtnEnable = function() {
+
+            var enable = $scope.user.name &&
+                $scope.user.idCard &&
+                $scope.user.email &&
+                $scope.user.account &&
+                $scope.user.apartment;
+
+            return enable;
+
+        };
+
+        //提交认证表单
         $scope.submitForm = function() {
 
             // 检查用户名 身份证 邮箱 支付宝 学校 宿舍 是否格式正确
@@ -190,12 +217,16 @@ angular.module('myApp.controllers', ['ionic'])
                 $scope.showAlert($scope.errors.account);
                 return;
             }
+
+            // TODO
+            // $scope.schoolCorrect();
+
             if (!$scope.apartmentCorrect()) {
                 $scope.showAlert($scope.errors.apartment);
                 return;
             }
 
-            // TODO
+
             $scope.showAlert('校验成功');
 
         };
