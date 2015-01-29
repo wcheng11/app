@@ -1,4 +1,4 @@
-angular.module('myApp.controllers', ['ionic'])
+angular.module('myApp.controllers')
     .controller('RegisterCtrl', ['$scope', '$location', '$interval', '$ionicPopup', 'RegisterService',
         function($scope, $location, $interval, $ionicPopup, RegisterService) {
 
