@@ -7,7 +7,7 @@ angular.module('myApp.filters', []);
 
 angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', 'myApp.controllers', 'myApp.directives', 'myApp.common', 'myApp.models'])
     // location url
-    .constant("baseUrl", "http://192.168.0.97:9008")
+    .constant("baseUrl", "http://192.168.0.95:9008")
     .constant("forgetUrl", "/v1/customer/forgetPwd/")
     .constant("verifyCodeUrl", "/v1/msg/verifycode")
     .constant("loginUrl", "/v1/customer/login")
@@ -70,7 +70,8 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
             // setup an abstract state for the tabs directive
             .state('home', {
                 url: "/home",
-                templateUrl: 'templates/home.html'
+                templateUrl: 'templates/home.html',
+                controller: 'HomeCtrl'
             })
             // setup an abstract state for the tabs directive
             .state('modifyPwd', {
@@ -91,8 +92,7 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
             })
             .state('personalCenter', {
                 url: "/personalCenter",
-                templateUrl: 'templates/personalCenter.html',
-                controller: 'PersonalCenterCtrl'
+                templateUrl: 'templates/personalCenter.html'
             })
             .state('login', {
                 url: "/login",
@@ -108,5 +108,21 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
                 templateUrl: 'templates/register.html'
             });
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/home');
+    })
+    .run(function ($rootScope, $window, $location) {
+        $rootScope.$on("$locationChangeStart", function (event, next, current) {
+
+            if(next.indexOf('index.html#/') > -1 && next.indexOf('index.html#/home') <= -1){
+                var loginInfo = localStorage.getItem("loginInfo");
+
+                if (!loginInfo) {
+                    //未登录
+                    $location.path('/login');
+                    return;
+                }else{
+                    //已登录
+                }
+            }
+        });
     });

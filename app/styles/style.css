@@ -43,8 +43,8 @@
 .input-label{
     width: 90px;
     padding-left: 10px;
-    font-family:STXihei;
-    font-weight:bold;
+    font-weight: 100;
+    font-family:Verdana,"华文细黑";
 }
 
 .button-padding{
@@ -57,17 +57,20 @@
 }
 
 .input-verifycode{
+    -webkit-flex: 1 0 150px;
     flex: 1 0 150px;
     padding-right: 0px;
 }
 
 .item-input input {
+    -webkit-flex: 1 0 150px;
     flex: 1 0 150px;
 }
 .a-blink{
     text-decoration: blink;
     color:#008ffe;
     font-family:STXihei;
+    margin-left:-130px;
 }
 .item-avatar .item-title{
     padding-left: 85px;
@@ -614,4 +617,15 @@ button.verify-code-disable{
 button.verify-code.active, button.verify-code.activated{
   /*background-color: #cccccc;*/
   opacity: 0.7;
+}
+
+.slideImagePortrait{
+    width: 380px;
+}
+
+.card-title{
+    border-width: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif, "华文细黑", "微软雅黑";
 }

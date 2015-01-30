@@ -1,11 +1,12 @@
-<ion-view>
+<ion-view title="Slides">
     <ion-content class="no-header">
         <div class="bar bar-header  bar-myStyle">
-            <a class="button icon-left ion-chevron-left button-clear button-light"></a>
-
-            <h1 class="title">Home</h1>
+            <h1 class="title">产品中心</h1>
+            <a ng-click="gotToPersonalCenter()" class="button icon-right button-icon icon ion-person">
+            </a>
         </div>
         <div class="bar bar-subheader bar-tabs">
+
             <div class="list">
                 <a class="item" href="#/personalCenter">
                     个人中心
@@ -28,8 +29,39 @@
                  <a class="item" href="#/profile">
                     个人资料
                 </a>
+
+                <ion-slide-box on-slide-changed="slideHasChanged($index)" slide-interval="2000" does-continue="true" show-pager="true" auto-play="true">
+                    <ion-slide ng-repeat="slide in slides | orderBy:'title'">
+                        <div class="box blue"><img ng-src="{{slide.full}}" class="slideImagePortrait"></div>
+                    </ion-slide>
+                </ion-slide-box>
+
+
+            <div class="list card">
+                <div class="item item-avatar">
+                    <img src="mcfly.jpg">
+                    <p class="card-title">不差钱---零息贷</p>
+                </div>
+                <div class="item item-body">
+                    <img class="full-image" src="img/picture01.jpg">
+
+                </div>
+                <div class="item item-avatar">
+                    <img src="mcfly.jpg">
+                    <p class="card-title">不差钱---随便花</p>
+                </div>
+                <div class="item item-body">
+                    <img class="full-image" src="img/picture02.jpg">
+
+                </div>
+                <div class="item item-body">
+                    <img class="full-image" src="img/picture03.jpg">
+
+                </div>
+
             </div>
         </div>
+
 
     </ion-content>
 </ion-view>

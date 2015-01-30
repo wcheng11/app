@@ -32,6 +32,7 @@ angular.module('myApp.controllers')
             }), function (error) {
                 console.error("Unable to get activities: " + error.data);
                 $scope.error = error.data;
+                Utils.showAlert($ionicPopup,"登录","网络异常！");
             });
         };
     }
