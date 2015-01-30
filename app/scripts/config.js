@@ -3,8 +3,8 @@
  angular.module("config", [])
 
 .constant("ENV", {
-  "name": "dev",
-  "apiEndpoint": "http://192.168.0.97:9008"
+  "name": "prod",
+  "apiEndpoint": "http://api.yoursite.com/"
 })
 
 ;
