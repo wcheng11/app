@@ -70,7 +70,8 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
             // setup an abstract state for the tabs directive
             .state('home', {
                 url: "/home",
-                templateUrl: 'templates/home.html'
+                templateUrl: 'templates/home.html',
+                controller: 'HomeCtrl'
             })
             // setup an abstract state for the tabs directive
             .state('modifyPwd', {
@@ -108,5 +109,5 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
                 templateUrl: 'templates/register.html'
             });
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/home');
     });
