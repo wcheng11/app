@@ -92,8 +92,7 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
             })
             .state('personalCenter', {
                 url: "/personalCenter",
-                templateUrl: 'templates/personalCenter.html',
-                controller: 'PersonalCenterCtrl'
+                templateUrl: 'templates/personalCenter.html'
             })
             .state('login', {
                 url: "/login",
@@ -110,4 +109,20 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/home');
+    })
+    .run(function ($rootScope, $window, $location) {
+        $rootScope.$on("$locationChangeStart", function (event, next, current) {
+
+            if(next.indexOf('index.html#/') > -1 && next.indexOf('index.html#/home') <= -1){
+                var loginInfo = localStorage.getItem("loginInfo");
+
+                if (!loginInfo) {
+                    //未登录
+                    $location.path('/login');
+                    return;
+                }else{
+                    //已登录
+                }
+            }
+        });
     });

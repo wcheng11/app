@@ -36,6 +36,7 @@ angular.module('myApp.controllers')
                 }), function (error) {
                     console.error("fail to execute SetPwdCtrl.setPwd  - status: " + error.status);
                     $scope.error = error.data;
+                    Utils.showAlert($ionicPopup,"登录","网络异常！");
                 });
             };
         });

@@ -4,7 +4,7 @@
  */
 angular.module('myApp.controllers')
     .controller('PersonalCenterCtrl',
-        function ($scope,$state, PersonalCenterService) {
+        function ($scope,$state,$ionicPopup,PersonalCenterService) {
             $scope.loginFlg = false;
             $scope.imgStyle = "img-last-child-logout";
             $scope.getUserInfo = function () {
@@ -22,7 +22,6 @@ angular.module('myApp.controllers')
                         $scope.loginFlg = true;
                         $scope.imgStyle = "img-last-child-login";
                         $scope.lengthStyle = "name-length-"+ $scope.user.name.length;
-
                     }else if(data.data.message.code === "2000"){
                         //token失效
                         localStorage.removeItem("loginInfo");
@@ -35,6 +34,7 @@ angular.module('myApp.controllers')
                 }), function (error) {
                     console.error("fail to execute PersonalCenterCtrl.getUserInfo  - status: " + error.status);
                     $scope.error = error.data;
+                    Utils.showAlert($ionicPopup,"登录","网络异常！");
                 });
             };
             $scope.logout = function (){

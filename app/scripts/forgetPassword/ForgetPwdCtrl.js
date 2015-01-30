@@ -17,6 +17,7 @@ angular.module('myApp.controllers')
             }), function (error) {
                 console.error("fail to execute ForgetPwdCtrl.forgetPwd  - status: " + error.status);
                 $scope.error = error.data;
+                Utils.showAlert($ionicPopup,"登录","网络异常！");
             });
         };
         VerifyCode.setPara('1',$interval,$ionicPopup,ForgetPwdService,$scope);

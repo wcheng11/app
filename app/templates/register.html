@@ -1,11 +1,9 @@
 <ion-view>
+    <div class="bar bar-header  bar-myStyle">
+        <a class="button icon-left ion-ios-arrow-left button-clear button-light " back-button></a>
 
-    <ion-header-bar class="my-header">
-        <a href="#/home" class="back-img"></a>
-        <h1 class="title my-h1">注册</h1>
-
-    </ion-header-bar>
-
+        <h1 class="title">注册</h1>
+    </div>
     <ion-content style="background-color:#e9e9e9;" ng-controller="RegisterCtrl">
 
         <form name="registerForm" novalidate>
@@ -24,16 +22,17 @@
             <div class="label-divider"></div>
 
             <span class="item item-input item-wrapper">
-                <div class="float-left"><span class="register-item-label">验证码</span>
-            </div>
+                <div class="float-left">
+                    <span class="register-item-label">验证码</span>
+                </div>
 
-            <div class="float-middle">
-                <input name="verifyCode" ng-model="newUser.userVerifyCode" class="register-item-input form-control" type="text" placeholder="请输入验证码" required>
-            </div>
+                <div class="float-middle">
+                    <input name="verifyCode" ng-model="newUser.userVerifyCode" class="register-item-input form-control" type="text" placeholder="请输入验证码" required>
+                </div>
 
-            <div class="float-right">
-                <button class="verify-code" ng-disabled="!verifyCodeEnable()" ng-class="verifyCodeEnable()? 'verify-code-enable':'verify-code-disable'" ng-click="getVerifyCode()">{{verifyCode.message}}</button>
-            </div>
+                <div class="float-right">
+                    <button class="verify-code" ng-disabled="!verifyCodeEnable()" ng-class="verifyCodeEnable()? 'verify-code-enable':'verify-code-disable'" ng-click="getVerifyCode()">{{verifyCode.message}}</button>
+                </div>
             </span>
 
 
