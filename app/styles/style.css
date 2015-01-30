@@ -309,7 +309,7 @@ input:-ms-input-placeholder {
 
 
 /*profile.html 专用*/
-label.profile-item-wrapper {
+div.profile-item-wrapper {
   border-width: 0px;
   padding-top: 4px;
   padding-bottom: 3px;
@@ -469,7 +469,7 @@ button.bottom-btn {
 }
 
 /*标签*/
-label.item-wrapper {
+div.item-wrapper {
   border-width: 0px;
 }
 span.register-item-label {

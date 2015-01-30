@@ -1,44 +1,44 @@
 <ion-view>
 
     <ion-header-bar class="my-header">
-        <!--
+       <!--  
         <a href="#/home" class="back-img"></a>
-        -->
+         -->
         <a class="button icon-left ion-chevron-left button-clear button-light"  href="#/home"></a>
         <h1 class="title my-h1">个人资料</h1>
     </ion-header-bar>
 
     <ion-content style="background-color:#e9e9e9;" ng-controller="ProfileCtrl" ng-init="getProfileInfo()">
 
-        <form action="">
+        <form name="profileForm" novalidate>
             <div class="section-divider"></div>
 
-            <label class="item item-input profile-item-wrapper">
+            <div class="item item-input profile-item-wrapper">
                 <span class="profile-item-label">姓名</span>
-                <input class="profile-item-input" type="text" placeholder="请填写您的真实姓名">
-            </label>
+                <input name="userName" ng-model="user.name" class="profile-item-input" type="text" placeholder="请填写您的真实姓名">
+            </div>
 
             <div class="label-divider"></div>
 
-            <label class="item item-input profile-item-wrapper">
+            <div class="item item-input profile-item-wrapper">
                 <span class="profile-item-label">身份证号</span>
-                <input class="profile-item-input" type="text" placeholder="请输入15或18位身份证号">
-            </label>
+                <input name="userIdCard" ng-model="user.idCard" class="profile-item-input" type="text" placeholder="请输入15或18位身份证号">
+            </div>
 
             <div class="label-divider"></div>
 
-            <label class="item item-input profile-item-wrapper">
+            <div class="item item-input profile-item-wrapper">
                 <span class="profile-item-label">邮箱</span>
-                <input class="profile-item-input" type="email" placeholder="请输入您常用的邮箱">
-            </label>
+                <input name="userEmail" ng-model="user.email" class="profile-item-input" type="text" placeholder="请输入您常用的邮箱">
+            </div>
 
 
             <div class="label-divider"></div>
 
-            <label class="item item-input profile-item-wrapper">
+            <div class="item item-input profile-item-wrapper">
                 <span class="profile-item-label">支付宝账户</span>
-                <input class="profile-item-input" type="text" placeholder="请输入您的支付宝账号">
-            </label>
+                <input name="userAccount" ng-model="user.account" class="profile-item-input" type="text" placeholder="请输入您的支付宝账号">
+            </div>
 
 
             <div class="section-divider"></div>
@@ -49,9 +49,9 @@
                 </div>
 
                 <div class="school-select-wrapper school-input-border">
-                    <select class="school-select">
-                        <option value="">--请选择省--</option>
-                        <option value="">--请选择省--</option>
+                    <select class="school-select" ng-model="user.schoolProvince">
+                        <option value="1">--请选择省--</option>
+                        <option value="2">--请选择省--</option>
                     </select>
                 </div>
 
@@ -68,16 +68,16 @@
                 </div>
             </div>
 
-            <label class="item item-input profile-item-wrapper">
+            <div class="item item-input profile-item-wrapper">
                 <span class="profile-item-label">宿舍</span>
-                <input class="profile-item-input" type="text" placeholder="请填写详细宿舍地址">
-            </label>
+                <input name="userApartment" ng-model="user.apartment" class="profile-item-input" type="text" placeholder="请填写详细宿舍地址">
+            </div>
 
 
             <div class="button-divider"></div>
 
             <div class="btn-wrapper">
-                <button class="bottom-btn">
+                <button class="bottom-btn" ng-click="submitForm()" ng-disabled="!registerBtnEnable()" ng-class="registerBtnEnable()?'btn-enable':'btn-disable'" >
                     立即认证
                 </button>
             </div>
