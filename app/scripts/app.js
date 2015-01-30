@@ -7,7 +7,7 @@ angular.module('myApp.filters', []);
 
 angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', 'myApp.controllers', 'myApp.directives', 'myApp.common', 'myApp.models'])
     // location url
-    .constant("baseUrl", "http://192.168.0.97:9008")
+    .constant("baseUrl", "http://192.168.0.95:9008")
     .constant("forgetUrl", "/v1/customer/forgetPwd/")
     .constant("verifyCodeUrl", "/v1/msg/verifycode")
     .constant("loginUrl", "/v1/customer/login")
