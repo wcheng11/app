@@ -15,5 +15,5 @@ plugins
 hooks
 
 
-app/fonts/*
+app/fonts
 *.7z
