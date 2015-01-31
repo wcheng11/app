@@ -13,3 +13,7 @@ plugins
 *.log
 *.DS_Store
 hooks
+
+
+app/fonts/ionicons.svg
+*.7z

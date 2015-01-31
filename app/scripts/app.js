@@ -15,8 +15,8 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
     .constant("modifyPwdUrl", "/v1/password")
     .constant("setPwdUrl", "/v1/password")
 
-    .run(function ($ionicPlatform) {
-        $ionicPlatform.ready(function () {
+.run(function($ionicPlatform) {
+        $ionicPlatform.ready(function() {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -29,7 +29,7 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
         });
 
         //主页面显示退出提示框
-        $ionicPlatform.registerBackButtonAction(function (e) {
+        $ionicPlatform.registerBackButtonAction(function(e) {
 
             e.preventDefault();
 
@@ -41,7 +41,7 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
                     cancelText: '取消'
                 });
 
-                confirmPopup.then(function (res) {
+                confirmPopup.then(function(res) {
                     if (res) {
                         ionic.Platform.exitApp();
                     } else {
@@ -65,9 +65,9 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
             return false;
         }, 101);
     })
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
-            // setup an abstract state for the tabs directive
+        // setup an abstract state for the tabs directive
             .state('home', {
                 url: "/home",
                 templateUrl: 'templates/home.html',
@@ -106,21 +106,25 @@ angular.module('myApp', ['ionic', 'config', 'myApp.filters', 'myApp.services', '
             .state('register', {
                 url: "/register",
                 templateUrl: 'templates/register.html'
+            })
+            .state('product', {
+                url: '/product',
+                templateUrl: 'templates/product.html'
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/home');
     })
-    .run(function ($rootScope, $window, $location) {
-        $rootScope.$on("$locationChangeStart", function (event, next, current) {
+    .run(function($rootScope, $window, $location) {
+        $rootScope.$on("$locationChangeStart", function(event, next, current) {
 
-            if(next.indexOf('index.html#/') > -1 && next.indexOf('index.html#/home') <= -1){
+            if (next.indexOf('index.html#/') > -1 && next.indexOf('index.html#/home') <= -1) {
                 var loginInfo = localStorage.getItem("loginInfo");
 
                 if (!loginInfo) {
                     //未登录
                     $location.path('/login');
                     return;
-                }else{
+                } else {
                     //已登录
                 }
             }

@@ -1,0 +1,111 @@
+<ion-view>
+    <ion-header-bar>
+        <a class="button icon-left ion-chevron-left button-clear button-dark" href="#/home"></a>
+
+        <h1 class="title product-title">零息贷</h1>
+        <!-- <button class="button button-clear button-positive">Edit</button> -->
+        <!-- <a class="button icon-right "></a> -->
+        <!-- <div class="icon-right"> -->
+        <button class="header-btn header-btn-phone"></button>
+        <button class="header-btn header-btn-share"></button>
+
+        <!-- </div> -->
+
+    </ion-header-bar>
+    <ion-content ng-controller="ProductCtrl">
+
+        <div class="top-pic-wrapper">
+            <img src="../img/top-pic.png" class="top-pic">
+            <div class="reputation-wrapper">
+                <div class="repution-word repution-top">好评率</div>
+                <div class="repution-word repution-middle">&nbsp&nbsp100 %</div>
+                <div class="repution-word repution-bottom">100人申请</div>
+
+            </div>
+
+        </div>
+
+        <div class="product-container">
+            <div class="item-header-wrapper ">
+                <img class="header-icon icon-product"></img>
+                <span class="header-span">产品介绍</span>
+
+            </div>
+            <div class="item-detail-wrapper product-intro">
+                上海交通卡.....
+            </div>
+        </div>
+        <div class="product-divider"></div>
+
+        <div class="product-container">
+            <div class="item-header-wrapper">
+                <img class="header-icon icon-file"></img>
+                <span class="header-span">用户需知</span>
+                <button class="show-hide" ng-class="showHide?'show-detial':'hide-detial'" ng-click="changeShowHide()"></button>
+            </div>
+            <div class="item-detail-wrapper user-instruction">
+                {{userInstruction}}
+
+            </div>
+
+        </div>
+        <div class="product-divider"></div>
+
+        <div class="product-container bottom-padding">
+            <div class="item-header-wrapper">
+                <img class="header-icon icon-pencil"></img>
+                <span class="header-span">自主定制</span>
+            </div>
+            <div class="item-detail-wrapper auot-customization">
+                <span class="customization-label">用途</span>
+                
+                <div class="row product-row" ng-repeat="list in lists" ng-init="row=$index">
+                    <div class="col-33" ng-class="row*3+$index == 0? 'rounded-selected':''" ng-repeat="item in list">
+                        <div class="rounded-wrapper" ng-click="select(row*3+$index);">
+                        <img src="../img/hook.png" class="hook" />
+                        <div class="rounded" >{{item}}</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <span class="customization-label">借款金额</span>
+                <input type="text" class="money-input" placeholder="100~500" />&nbsp&nbsp元
+                <br />
+                <span class="customization-label">还款时间</span>
+                <input type="text" class="money-input" placeholder="" />
+                <img src="../img/mark.png" class="mark" ng-click="changePrompt()"/>
+
+                <div class="pop_prompt" ng-show="showPrompt">
+                    <div class="triangle_border triangle_up"></div>
+                    <div class="triangle_background triangle_up"></div>
+                </div>
+
+
+
+                <div class="money-wrapper">
+                    <span class="customization-label">应还金额</span>
+                    <span class="money-label">1520元</span>
+                    <br />
+                    <span class="money-sub-label">(本金:￥1500+服务费:￥1*20天)</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div ng-view class="ngFade"></div>
+
+
+
+    </ion-content>
+
+
+    <ion-footer-bar class="product-footer">
+        <div class="footer-wrapper">
+            <button class="product-confirm">立即下单</button>
+        </div>
+
+    </ion-footer-bar>
+
+</ion-view>
