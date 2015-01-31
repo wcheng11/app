@@ -15,5 +15,5 @@ plugins
 hooks
 
 
-app/fonts/ionicons.svg
+app/fonts/*
 *.7z
