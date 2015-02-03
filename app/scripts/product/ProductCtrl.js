@@ -9,16 +9,15 @@ angular.module('myApp.controllers')
         ];
         $scope.userInstruction = instructions[0];
         $scope.changeShowHide = function() {
-
             $scope.showHide = !$scope.showHide;
             $scope.userInstruction = instructions[$scope.showHide ? 0 : 1];
             console.log($scope.userInstruction);
             console.log($scope.showHide);
         };
 
-
+        // 还款时间的感叹号 @wc
         $scope.showPrompt = false;
-        
+
         $scope.lists = [
             ["test1", "test2", "test3"],
             ["test1", "test2", "test3"]
@@ -33,7 +32,5 @@ angular.module('myApp.controllers')
             angular.element(document.getElementsByClassName("rounded-selected")[0]).removeClass("rounded-selected");
             angular.element(document.getElementsByClassName("rounded-wrapper")[i]).addClass("rounded-selected");
         };
-
-
 
     });

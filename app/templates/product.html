@@ -1,17 +1,17 @@
 <ion-view>
-    <ion-header-bar>
-        <a class="button icon-left ion-chevron-left button-clear button-dark" href="#/home"></a>
+    <ion-header-bar class="product-header">
+        <a class="button icon-left ion-chevron-left button-clear button-dark home-btn" href="#/home"></a>
 
         <h1 class="title product-title">零息贷</h1>
-        <!-- <button class="button button-clear button-positive">Edit</button> -->
-        <!-- <a class="button icon-right "></a> -->
-        <!-- <div class="icon-right"> -->
-        <button class="header-btn header-btn-phone"></button>
-        <button class="header-btn header-btn-share"></button>
 
-        <!-- </div> -->
+        <img src="../img/phone.png" class="header-btn header-btn-phone"></img>
+        <img src="../img/share.png" class="header-btn header-btn-share"></img>
+
+
 
     </ion-header-bar>
+
+    <!-- 顶部好评率 -->
     <ion-content ng-controller="ProductCtrl">
 
         <div class="top-pic-wrapper">
@@ -22,12 +22,11 @@
                 <div class="repution-word repution-bottom">100人申请</div>
 
             </div>
-
         </div>
-
+        <!-- 产品介绍 -->
         <div class="product-container">
             <div class="item-header-wrapper ">
-                <img class="header-icon icon-product"></img>
+                <img src="../img/product.png" class="header-icon icon-product"></img>
                 <span class="header-span">产品介绍</span>
 
             </div>
@@ -35,13 +34,16 @@
                 上海交通卡.....
             </div>
         </div>
+
+
         <div class="product-divider"></div>
 
+        <!-- 用户需知 -->
         <div class="product-container">
             <div class="item-header-wrapper">
-                <img class="header-icon icon-file"></img>
+                <img src="../img/file.png" class="header-icon icon-file"></img>
                 <span class="header-span">用户需知</span>
-                <button class="show-hide" ng-class="showHide?'show-detial':'hide-detial'" ng-click="changeShowHide()"></button>
+                <img ng-src="../img/{{ showHide?'show-detail':'hide-detail' }}.png" class="show-hide" ng-class="showHide?'show-detail':'hide-detail'" ng-click="changeShowHide()"></img>
             </div>
             <div class="item-detail-wrapper user-instruction">
                 {{userInstruction}}
@@ -51,19 +53,20 @@
         </div>
         <div class="product-divider"></div>
 
+        <!-- 自主定制 -->
         <div class="product-container bottom-padding">
             <div class="item-header-wrapper">
-                <img class="header-icon icon-pencil"></img>
+                <img src="../img/pencil.png" class="header-icon icon-pencil"></img>
                 <span class="header-span">自主定制</span>
             </div>
             <div class="item-detail-wrapper auot-customization">
                 <span class="customization-label">用途</span>
-                
+
                 <div class="row product-row" ng-repeat="list in lists" ng-init="row=$index">
                     <div class="col-33" ng-class="row*3+$index == 0? 'rounded-selected':''" ng-repeat="item in list">
                         <div class="rounded-wrapper" ng-click="select(row*3+$index);">
-                        <img src="../img/hook.png" class="hook" />
-                        <div class="rounded" >{{item}}</div>
+                            <img src="../img/hook.png" class="hook" />
+                            <div class="rounded">{{item}}</div>
                         </div>
                     </div>
                 </div>
@@ -74,11 +77,13 @@
                 <br />
                 <span class="customization-label">还款时间</span>
                 <input type="text" class="money-input" placeholder="" />
-                <img src="../img/mark.png" class="mark" ng-click="changePrompt()"/>
+                <img src="../img/mark.png" class="mark" ng-click="changePrompt()" />
 
                 <div class="pop_prompt" ng-show="showPrompt">
+
                     <div class="triangle_border triangle_up"></div>
                     <div class="triangle_background triangle_up"></div>
+                    fads <br>fads <br>fads <br>fads <br>fads <br>fads <br>fads <br>
                 </div>
 
 

@@ -1,10 +1,10 @@
 "use strict";
 
-angular.module("config", [])
+ angular.module("config", [])
 
 .constant("ENV", {
-    "name": "dev",
-    "apiEndpoint": "http://192.168.0.97:9008"
+  "name": "dev",
+  "apiEndpoint": "http://192.168.0.97:9008"
 })
 
 ;
